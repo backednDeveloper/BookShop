@@ -52,15 +52,18 @@ public class Book {
         this.quantity = quantity;
     }
 
-    public String getInfo() {
-        System.out.println("Kitab melumatlari : " + "\n" +
-                "Adi : " + getTitle() + "\n" +
-                "Yazari : " + getAuthor() + "\n" +
-                "Seriya nomresi : " + getSeriaNumber() + "\n" +
-                "Qiymeti : " + getPrice() + "\n" +
-                "Stokta miqdari : " + getQuantity() + "\n"
-        );
-        return getInfo();
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", seriaNumber=" + seriaNumber +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
     }
 
+    public void getInfo() {
+        toString();
+    }
 }

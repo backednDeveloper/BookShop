@@ -10,13 +10,26 @@ import printMethods.ForPrint;
 
 public class Methods {
     public static void callMethod() throws BookNotFound, SearchBySerialNumber {
+        String[] title1 = {"1984", "MOCKBIRD", "BIGQETSBI", "QURURVEQEREZ"};
+        String[] author1 = {"Corc Oruellin", "Harper Li", "F. Scott Fitzgerald", "Jane Austenin"};
+        int[] serialNumber1 = {10169, 10168, 10167, 10166};
+        int[] price1 = {65, 54, 32, 41};
+        int[] stockQuantity = {10, 12, 20, 7};
+        Book book1 = new Book(title1[0], author1[0], serialNumber1[0], price1[0], stockQuantity[0]);
+        Book book2 = new Book(title1[1], author1[1], serialNumber1[1], price1[1], stockQuantity[1]);
+        Book book3 = new Book(title1[2], author1[2], serialNumber1[2], price1[2], stockQuantity[2]);
+        Book book4 = new Book(title1[3], author1[3], serialNumber1[3], price1[3], stockQuantity[3]);
+        BookStocks.book.add(book1);
+        BookStocks.book.add(book2);
+        BookStocks.book.add(book3);
+        BookStocks.book.add(book4);
         for (Book information : BookStocks.book) {
-            boolean found = false;
             information.getInfo();
+            boolean found = false;
             String input = ForPrint.inputString("Kitabinizin adini daxil edin : ");
             String callBook = input.trim().toUpperCase();
             if (information.getTitle().contains(callBook)) {
-                information.getInfo();
+                System.out.println(information);
                 found = true;
             }
             if (!found) {
