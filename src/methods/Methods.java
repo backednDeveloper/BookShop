@@ -9,7 +9,7 @@ import object.Book;
 import printMethods.ForPrint;
 
 public class Methods {
-    public static void callMethod() throws BookNotFound, SearchBySerialNumber {
+    public static String callMethod() throws BookNotFound, SearchBySerialNumber {
         String[] title1 = {"1984", "MOCKBIRD", "BIGQETSBI", "QURURVEQEREZ"};
         String[] author1 = {"Corc Oruellin", "Harper Li", "F. Scott Fitzgerald", "Jane Austenin"};
         int[] serialNumber1 = {10169, 10168, 10167, 10166};
@@ -31,12 +31,13 @@ public class Methods {
             if (information.getTitle().contains(callBook)) {
                 System.out.println(information);
                 found = true;
+                return Menu.menu();
             }
             if (!found) {
                 throw new BookNotFound("Bu adda kitab tapilmamisdir");
             }
         }
-        Menu.menu();
+        return Menu.menu();
     }
 
     public static String addMethods() throws SearchBySerialNumber, BookNotFound {
