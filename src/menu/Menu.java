@@ -15,19 +15,19 @@ public class Menu {
         );
         switch (choose) {
             case 1 :
-                System.out.println("---------- Kitab Cagirilmasi -----------");
+                System.out.println("---------- Kitab Cagirilmasi -----------" + "\n");
                 Methods.callMethod();
                 break;
             case 2:
-                System.out.println(" ------- Kitab Elave Edilmesi ------- ");
+                System.out.println(" ------- Kitab Elave Edilmesi ------- " + "\n");
                 Methods.addMethods();
                 break;
             case 3:
-                System.out.println(" ------ Kitab Melumati Deyisdilirmesi ------ ");
+                System.out.println(" ------ Kitab Melumati Deyisdilirmesi ------ " + "\n");
                 Methods.updateMethods();
                 break;
             default:
-                System.out.println("Something went wrong.");
+                System.out.println("Something went wrong." );
                 break;
         }
         return Menu.menu();

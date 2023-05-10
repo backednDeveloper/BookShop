@@ -24,9 +24,9 @@ public class Methods {
         BookStocks.book.add(book3);
         BookStocks.book.add(book4);
         for (Book information : BookStocks.book) {
-            information.getInfo();
+            System.out.println(BookStocks.book.get(0) + "\n" + BookStocks.book.get(1) + "\n" + BookStocks.book.get(2) + "\n" + BookStocks.book.get(3));
             boolean found = false;
-            String input = ForPrint.inputString("Kitabinizin adini daxil edin : ");
+            String input = ForPrint.inputString(  "\n" + "Kitabinizin adini daxil edin : ");
             String callBook = input.trim().toUpperCase();
             if (information.getTitle().contains(callBook)) {
                 System.out.println(information);
@@ -54,7 +54,7 @@ public class Methods {
         return Menu.menu();
     }
 
-    public static void updateMethods() throws SearchBySerialNumber, BookNotFound {
+    public static String updateMethods() throws SearchBySerialNumber, BookNotFound {
         int search = ForPrint.inputInt("Kitabin seriya nomresini elave edin : ");
         boolean found = false;
         for (Book information : BookStocks.book) {
@@ -103,7 +103,6 @@ public class Methods {
                 throw new SearchBySerialNumber("Bu seriya nomreli kitab tapilmamistir");
             }
         }
-
-        Menu.menu();
+        return Menu.menu();
     }
 }

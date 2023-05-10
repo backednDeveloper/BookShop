@@ -1,5 +1,7 @@
 package object;
 
+import datas.BookStocks;
+
 public class Book {
     private String title, author;
     private int seriaNumber, price, quantity;
@@ -54,13 +56,13 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", seriaNumber=" + seriaNumber +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                '}';
+        return "Kitab = (" +
+                "Adı :'" + title + '\'' +
+                ", Yazarı :'" + author + '\'' +
+                ", Seriya nomresi :" + seriaNumber +
+                ", Qiymeti :" + price +
+                ", Stok miqdari :" + quantity +
+                ')';
     }
 
     public void getInfo() {
