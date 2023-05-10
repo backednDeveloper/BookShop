@@ -49,7 +49,7 @@ public class Methods {
         int quantity = ForPrint.inputInt("Stoka elave edeceyiniz miqdar : ");
         Book book = new Book(title, author, serialNumber, price, quantity);
         BookStocks.book.add(book);
-        //System.out.println("Kitabiniz elave edildi " + "\n" + "Kitab melumatlari " + "\n" + book.getInfo());
+        System.out.println("Kitabiniz elave edildi " + "\n" + "Kitab melumatlari : " + book);
         return Menu.menu();
     }
 
