@@ -1,15 +1,11 @@
 package datas;
 
-import exception.BookNotFound;
-import exception.SearchBySerialNumber;
-import methods.Methods;
 import object.Book;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class BookStocks {
 
     public static List<Book> book = new ArrayList<>();
-
+    public static Iterator<Book> iterator = book.iterator();
 }
