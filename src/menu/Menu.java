@@ -5,8 +5,11 @@ import exception.SearchBySerialNumber;
 import methods.Methods;
 import printMethods.ForPrint;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class Menu {
-    public static String menu() throws SearchBySerialNumber, BookNotFound {
+    public static String menu() throws SearchBySerialNumber, BookNotFound, IOException {
         int choose = ForPrint.inputInt(
                 "1 - Kitab cagirmaq " + "\n" +
                 "2 - Kitab elave etmek " + "\n" +

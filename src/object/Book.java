@@ -1,8 +1,10 @@
 package object;
 
-import datas.BookStocks;
 
-public class Book {
+
+import java.io.Serializable;
+
+public class Book implements Serializable {
     private String title, author;
     private int seriaNumber, price, quantity;
 

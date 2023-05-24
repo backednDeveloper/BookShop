@@ -6,11 +6,13 @@ import menu.Menu;
 import object.Book;
 import printMethods.ForPrint;
 
+import java.io.*;
+
 import static datas.BookStocks.book;
 import static datas.BookStocks.iterator;
 
 public class Methods {
-    public static String callMethod() throws BookNotFound, SearchBySerialNumber {
+    public static String callMethod() throws BookNotFound, SearchBySerialNumber, IOException {
 
         String[] title1 = {"1984", "MOCKBIRD", "BIGQETSBI", "QURURVEQEREZ"};
         String[] author1 = {"Corc Oruellin", "Harper Li", "F. Scott Fitzgerald", "Jane Austenin"};
@@ -43,8 +45,8 @@ public class Methods {
         return Menu.menu();
     }
 
-    public static String addMethods() throws SearchBySerialNumber, BookNotFound {
-
+    public static String addMethods() throws SearchBySerialNumber, BookNotFound, IOException {
+        File file = new File("EMIL FILE");
         String input = ForPrint.inputString("Kitabiniz adini elave edin : ");
         String title = input.trim().toUpperCase();
         String input1 = ForPrint.inputString("Yazarin adini elave edin : ");
@@ -55,10 +57,20 @@ public class Methods {
         Book book1 = new Book(title, author, serialNumber, price, quantity);
         book.add(book1);
         System.out.println("Kitabiniz elave edildi " + "\n" + "Kitab melumatlari : " + book);
+        try {
+            FileOutputStream file1 = new FileOutputStream(file);
+            ObjectOutputStream out = new ObjectOutputStream(file1);
+            out.writeObject(book);
+            out.close();
+            file1.close();
+            System.out.println(book1.toString() +  "File yazildi.");
+        }catch (IOException e ){
+            e.printStackTrace();
+        }
         return Menu.menu();
     }
 
-    public static String updateMethods() throws SearchBySerialNumber, BookNotFound {
+    public static String updateMethods() throws SearchBySerialNumber, BookNotFound, IOException {
 
         int search = ForPrint.inputInt("Kitabin seriya nomresini elave edin : ");
         boolean found = false;
