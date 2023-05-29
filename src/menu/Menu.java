@@ -22,7 +22,7 @@ public class Menu {
                 Methods.callMethod();
                 break;
             case 2:
-                System.out.println(" ------- Kitab Elave Edilmesi ------- " + "\n");
+               System.out.println(" ------- Kitab Elave Edilmesi ------- " + "\n");
                 Methods.addMethods();
                 break;
             case 3:

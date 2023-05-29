@@ -19,14 +19,10 @@ public class Methods {
         int[] serialNumber1 = {10169, 10168, 10167, 10166};
         int[] price1 = {65, 54, 32, 41};
         int[] stockQuantity = {10, 12, 20, 7};
-        Book book1 = new Book(title1[0], author1[0], serialNumber1[0], price1[0], stockQuantity[0]);
-        Book book2 = new Book(title1[1], author1[1], serialNumber1[1], price1[1], stockQuantity[1]);
-        Book book3 = new Book(title1[2], author1[2], serialNumber1[2], price1[2], stockQuantity[2]);
-        Book book4 = new Book(title1[3], author1[3], serialNumber1[3], price1[3], stockQuantity[3]);
-        book.add(book1);
-        book.add(book2);
-        book.add(book3);
-        book.add(book4);
+        book.add(new Book(title1[0], author1[0], serialNumber1[0], price1[0], stockQuantity[0]));
+        book.add(new Book(title1[1], author1[1], serialNumber1[1], price1[1], stockQuantity[1]));
+        book.add(new Book(title1[2], author1[2], serialNumber1[2], price1[2], stockQuantity[2]));
+        book.add(new Book(title1[3], author1[3], serialNumber1[3], price1[3], stockQuantity[3]));
 
         boolean found = false;
         while (iterator.hasNext()) {
